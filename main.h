@@ -29,7 +29,7 @@
 typedef struct fmt
 {
 	char fmt;
-	int (*fP)(va_list, char[], int, int, int, int);
+	int (*fp)(va_list, char[], int, int, int, int);
 } fmt_t;
 
 /* PROTOTYPES */
