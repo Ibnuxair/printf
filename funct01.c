@@ -1,16 +1,16 @@
 #include "main.h"
 
-/************************* PRINT UNSIGNED NUMBER *************************/
 /**
- * print_unsigned - Prints an unsigned number
- * @types: List a of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed.
+ * print_unsigned - unsigned number
+ * @types: Arguments
+ * @buffer: An array buffer to manage printing
+ * @flags:  Computes active flags
+ * @width: genetrates width
+ * @precision: Precision spec
+ * @size: specifies size
+ * Return: the count of printed characters
  */
+
 int print_unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -35,21 +35,20 @@ int print_unsigned(va_list types, char buffer[],
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
-/************* PRINT UNSIGNED NUMBER IN OCTAL  ****************/
 /**
- * print_octal - Prints an unsigned number in octal notation
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed
+ * print_octal - Outputs an unsigned number using octal notation
+ * @types: Enumerations of arguments
+ * @buffer: An array buffer to manage printing
+ * @flags: Computes active flags 
+ * @width: genetrates width
+ * @precision: Precision spec
+ * @size: specifies size
+ * Return: The count of printed characters
  */
+
 int print_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-
 	int i = BUFF_SIZE - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
 	unsigned long int init_num = num;
@@ -77,16 +76,16 @@ int print_octal(va_list types, char buffer[],
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
-/************** PRINT UNSIGNED NUMBER IN HEXADECIMAL **************/
+
 /**
- * print_hexadecimal - Prints an unsigned number in hexadecimal notation
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed
+ * print_hexadecimal - outputs an unsigned number in hexadecimal notation
+ * @types: Enumeration of arguments
+ * @buffer: An array buffer to manage printing
+ * @flags:  Computes active flags
+ * @width: generates width
+ * @precision: Precision spec
+ * @size: specifies size
+ * Return: The count of printed characters
  */
 int print_hexadecimal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
