@@ -56,7 +56,7 @@ int print_string(va_list types, char buffer[],
 
 	if (width > length)
 	{
-		if (flags & F_MINUS)
+		if (flags & MINUS_FLAG)
 		{
 			write(1, &str[0], length);
 			for (i = width - length; i > 0; i--)
@@ -138,7 +138,8 @@ int print_int(va_list types, char buffer[],
 
 	i++;
 
-	return (write_number(is_negative, i, buffer, flags, width, precision, size));
+	return (write_number(is_negative, i, buffer, flags, width,
+			     precision, size));
 }
 
 /************************* PRINT BINARY *************************/
