@@ -10,11 +10,11 @@
 #define BUFF_SIZE 1024
 
 /* FLAGS */
-#define F_MINUS 1
-#define F_PLUS 2
-#define F_ZERO 4
-#define F_HASH 8
-#define F_SPACE 16
+#define MINUS_FLAG 1
+#define PLUS_FLAG 2
+#define ZERO_FLAG 4
+#define HASH_FLAG 8
+#define SPACE_FLAG 16
 
 /* SIZES */
 #define S_LONG 2
@@ -29,15 +29,13 @@
 typedef struct fmt
 {
 	char fmt;
-	int (*fn)(va_list, char[], int, int, int, int);
+	int (*fP)(va_list, char[], int, int, int, int);
 } fmt_t;
 
-
+/* PROTOTYPES */
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
-
-/****************** FUNCTIONS ******************/
 
 /* Function to print Buffer */
 void print_buffer(char buffer[], int *buff_ind);
@@ -103,7 +101,7 @@ int write_unsgnd(int is_negative, int ind,
 char buffer[],
 	int flags, int width, int precision, int size);
 
-/****************** UTILS ******************/
+/* UTILS */
 int is_printable(char);
 int append_hexa_code(char, char[], int);
 int is_digit(char);
